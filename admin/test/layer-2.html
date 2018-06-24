@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="/assets/vendors/jquery.1.11.js"></script>
+    <script type="text/javascript" src="/assets/vendors/layer/layer.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+//layer.alert('警告框');
+// 点击确定是，会使用参数2
+// 参数2是一个回调函数，点击确定是会执行该函数
+/*layer.confirm('您确定删除该数据吗?', function () {
+    layer.alert('删除成功');
+});*/
+//layer.msg("我也不知道为什么，就想弹个消息");
+
+// 参数1：配置项
+// 参数2: 点击“确定”时执行的回调函数
+layer.prompt({
+  formType: 0,
+  value: '初始值',
+  title: '测试',
+  offset: ['300px', '400px'],
+}, function(value, index, elem){
+  // index： 就当前弹出层的索引
+  alert(value); //得到value
+  // 根据索引来关闭当前弹出层
+  layer.close(index);
+  console.log(elem);
+});
+</script>
+</body>
+</html>

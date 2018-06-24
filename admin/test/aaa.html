@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+独立页面
+<input type="button" value="btn" onclick="func()"></input>
+
+<script type="text/javascript">
+function func(){
+    var obj = parent.document.getElementById('d');
+    alert(obj.innerHTML);
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="/assets/vendors/ueditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/assets/vendors/ueditor/third-party/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/vendors/ueditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/vendors/ueditor/umeditor.min.js"></script>
+    <script type="text/javascript" src="/assets/vendors/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+<textarea id="content"></textarea>
+
+<script type="text/javascript">
+var um = UM.getEditor('content', {
+    initialFrameWidth:500, //初始化编辑器宽度,默认500
+    initialFrameHeight:300,  //初始化编辑器高度,默认500
+    toolbar:[
+            'source | undo redo | bold italic underline strikethrough | superscript subscript | forecolor backcolor | removeformat |',
+            'insertorderedlist insertunorderedlist | selectall cleardoc paragraph | fontfamily fontsize' ,
+            '| justifyleft justifycenter justifyright justifyjustify |',
+            'link unlink | emotion image video  | map',
+            '| horizontal print preview fullscreen', 'drafts', 'formula'
+        ]
+});
+</script>
+</body>
+</html>

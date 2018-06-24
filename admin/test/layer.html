@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="/assets/vendors/jquery.1.11.js"></script>
+    <script type="text/javascript" src="/assets/vendors/layer/layer.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+layer.ready(function(){ 
+  layer.open({
+    type: 2,
+    title: '欢迎页',
+    maxmin: true,
+    area: ['800px', '500px'],
+    //time: 1000,
+    content: 'http://layer.layui.com/test/welcome.html',
+    end: function(){
+      layer.tips('Hi', '#about', {tips: 1})
+    }
+  });
+});
+</script>
+</body>
+</html>

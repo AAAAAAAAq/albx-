@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="/assets/vendors/require.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+//参数1： 要加载的模块
+//参数2： 回调函数，该函数中可以设置一个参数，该参数就是str.js模块的返回数据
+/*require(['./str'], function (str) {
+    alert(str);
+})*/
+
+/*require(['./obj'], function (obj) {
+    console.log(obj);
+})*/
+
+/*require(['./func'], function (f) {
+    //在函数调用时，传入实参
+    f(10, 20);
+})*/
+
+//如果加载的模块没有返回值，同样需要占位
+require(['./a', './str', './obj', './func'], function (args, args1, args2, args3) {
+    console.log(args);
+    console.log(args1);
+    console.log(args2);
+    args3(1.5, 2.3);
+})
+</script>
+</body>
+</html>

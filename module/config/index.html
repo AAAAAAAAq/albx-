@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="./js/require.js"></script>
+</head>
+<body>
+<div id="d">dddddddddddddd</div>
+<script type="text/javascript">
+requirejs.config({
+    //配置根路径
+    baseUrl: './',
+    //为模块定义别名
+    //baseUrl+paths中定义的路径会组成完成的路径
+    paths: {
+        'a': 'module/module_a', // ./module/module_a.js
+        'b': 'module/module_b', // ./module/module_b.js
+        'person': 'tools/person', 
+        //为jquery定义别名
+        'jq': 'js/jquery.1.11'
+    },
+    shim: {
+        //将person.js中的对象p导出
+        'person': {
+            //p 一定要和  person.js文件中最终产生的对象名一致
+            'exports': 'p',
+            //声明 person.js模块依赖于 jquery
+            'deps': ['jq']
+        }
+    }
+});
+
+//加载模块时，只需要使用模块别名即可
+require(['a', 'b', 'person'], function (args1, args2, args3) {
+    console.log(args1);
+    console.log(args2);
+    args3.name = "ww";
+    args3.age  = 30;
+    args3.sayHi();
+})
+</script>
+</body>
+</html>

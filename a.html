@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="/assets/vendors/jquery.1.11.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  $.ajax({
+    url: 'http://apis.map.qq.com/ws/place/v1/search?keyword=%E9%85%92%E5%BA%97&boundary=nearby(39.908491,116.374328,1000)&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77',
+    type: 'get',
+    dataType: 'jsonp',
+    jsonp: 'callback',
+    success: function (msg){
+        console.log(msg)
+    }
+})  
+</script>
+
+</body>
+</html>
